@@ -1,0 +1,9 @@
+FROM java:8
+
+EXPOSE 8080
+
+# add jar into target directory and map these jar into docker container jar
+ADD target/exam.jar exam.jar
+
+# entrypoint specify what it is. i.e, it is java jar and name is exam.jar
+ENTRYPOINT ["java","-jar","exam.jar"]
